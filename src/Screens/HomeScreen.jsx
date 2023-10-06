@@ -1,9 +1,8 @@
-import {Box} from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import Hero from "../Sections/Hero";
 import Movies from "../Components/Movies";
 import Footer from "../Sections/Footer";
 function HomeScreen() {
-
   return(
     <Box> 
       <Hero/>
@@ -12,7 +11,5 @@ function HomeScreen() {
     </Box> 
   );
 }
-
-
 
 export default HomeScreen;

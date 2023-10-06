@@ -1,44 +1,83 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/*
+  btn-color : #e4d804
+*/
+
+:root {
+  --btn-bg: #e4d804;
+  --btn-text: #212529;
+  --bg-white: #f8f9fa;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* html {
+  font-size: 62.5%;
+} */
+
+body {
+  height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.flex-items {
+  display: flex;
 }
 
-.card {
-  padding: 2em;
+.pos-center {
+  justify-content: center;
+  align-items: center;
 }
 
-.read-the-docs {
-  color: #888;
+.btn-sign {
+  border: 2px solid var(--btn-bg);
+  padding: 0.8rem 2.8rem;
+  border-radius: 25px;
+  font-weight: 700;
+  transition: 0.3s all;
+}
+
+.btn-sign:hover {
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  text-decoration: none;
+}
+
+/* carousel */
+
+/* .carousel-item {
+  position: relative;
+} */
+.carousel-caption {
+  position: absolute;
+  top: 25%;
+  right: 40%;
+  padding: 4%;
+  left: 0;
+  line-height: 1.2;
+  text-align: left;
+}
+
+.text-yellow {
+  color: var(--btn-bg);
+}
+
+.big-font {
+  font-size: 3.8rem;
+  font-weight: 900;
+}
+
+/* Carousel */
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 4%;
+}
+
+.carousel-indicators .active {
+  background-color: var(--btn-bg);
 }
 
 
