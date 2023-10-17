@@ -1,22 +1,23 @@
-
 // import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import Carousel from "react-bootstrap/Carousel";
-import { themeConfig } from "../utils/themeConfig";
+import { themeConfig } from "../Utils/themeConfig";
 import NavBar from "../Components/NavBar";
 import { TimeIcon, CalendarIcon } from "@chakra-ui/icons";
+import { Box, Image } from "@chakra-ui/react";
 
 export default function App() {
   return (
-    <div>
+    <Box>
       <NavBar></NavBar>
 
       <Carousel>
         <Carousel.Item>
-          <img
-            className="d-block w-100"
+          <Image
+            // className="d-block w-100"
             src={themeConfig.heroSectionbg}
             alt="Image One"
+            objectFit="cover"
           />
           <div className="carousel-caption">
             <h3 style={{ color: themeConfig.iconstextColor, fontWeight: 700 }}>
@@ -121,6 +122,6 @@ export default function App() {
           </div>
         </Carousel.Item>
       </Carousel>
-    </div>
+    </Box>
   );
 }
