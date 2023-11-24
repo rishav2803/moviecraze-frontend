@@ -7,6 +7,8 @@ import {
   Divider,
   InputGroup,
   InputRightElement,
+  // List,
+  // ListItem,
 } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -37,64 +39,65 @@ function Footer() {
   ];
   return (
     <Box>
-      <Box
-        h={"80vh"}
+      <Flex
+        h={"70vh"}
         color="white"
         bgImage="url('https://themehut.co/wp/movflx/wp-content/uploads/2022/08/footer_bg.jpg')"
         bgPosition="center"
         bgSize="cover"
         style={customFontStyle}
-        display="flex"
-        justifyContent="space-between"
-        alignItems="baseline"
-        pt="20"
-        px="48"
+        justifyContent="center"
+        gap={24}
+        pt={20}
       >
-        <Flex flexDirection="column" alignItems="flex-start">
-          <Flex alignItems="center" mb={2}>
+        {/* Address */}
+        <Flex flexDirection="column" alignItems="flex-start" marginRight={16}>
+          <Flex alignItems="center" justifyContent="center">
             <FontAwesomeIcon
               icon={faClapperboard}
-              style={{ color: "#e4d804", marginRight: "6px", fontSize: "25px" }}
+              style={{ color: "#e4d804", marginRight: "6px", fontSize: "30px" }}
             />
-            <Text fontWeight="1000" fontSize="25px">
+            <Text fontWeight="1000" fontSize="25px" paddingTop={5}>
               MovieCraze
             </Text>
           </Flex>
 
-          <Text mt="4" color="#D2CFCF" fontSize="15px">
-            Lights, Camera, Reviews:
+          <Text color="#D2CFCF" fontSize="15px" fontWeight={500}>
+            Movflx Online the relase etras
             <br />
-            Your Ticket to Movie Mastery!
-            <br />
-            <br />
-            <Flex flexDirection="row" alignItems="center">
+            thats sheets continig passag.
+          </Text>
+
+          <Flex flexDirection="row">
+            {/* icoons */}
+            <Flex flexDirection="column" justifyContent="center" gap={6}>
               <FontAwesomeIcon
                 icon={faLocationDot}
                 style={{ color: "#D2CFCF", paddingRight: "7px" }}
               />
-              <Text> Address: Nerul, Navi Mumbai </Text>
-            </Flex>
-            <br />
-            <Flex flexDirection="row" alignItems="center">
               <FontAwesomeIcon
                 icon={faPhoneVolume}
                 style={{ color: "#D2CFCF", paddingRight: "7px" }}
               />
-              <Text> Phone: +24 1245 654 235 </Text>
-            </Flex>
-            <br />
-            <Flex flexDirection="row" alignItems="center">
               <FontAwesomeIcon
                 icon={faEnvelope}
                 style={{ color: "#D2CFCF", paddingRight: "5px" }}
               />
-              <Text> Email: info@example.com </Text>
             </Flex>
-          </Text>
-        </Flex>
 
-        <Flex flexDirection="column" alignItems="flex-start">
-          <Text mb={2} fontWeight="600" fontSize="20px">
+            {/* text */}
+            <Flex flexDirection="column" justifyContent="center" paddingTop={4}>
+              <Text> Address : PO Box W75 Street</Text>
+              <Text> Phone : +24 1245 654 235 </Text>
+              <Text> Email : info@example.com </Text>
+            </Flex>
+          </Flex>
+        </Flex>
+        {/* Address end */}
+
+        {/* Categories */}
+        <Flex flexDirection="column">
+          <Text fontWeight="600" fontSize="20px">
             Categories
           </Text>
           <Divider
@@ -103,25 +106,31 @@ function Footer() {
             marginY="2"
             width="55px"
             borderRadius="2px"
+            marginBottom={8}
           />
-          {categories.map((category, index) => (
-            <Text key={index} color="#D2CFCF" fontSize="15px" mt={4}>
-              {category.name}
-              <span
-                style={{ paddingLeft: "1rem" }}
-              >{`(${category.count})`}</span>
-            </Text>
-          ))}
+
+          <Flex flexDirection="row" gap={16} marginTop={2}>
+            <Flex flexDirection="column">
+              {categories.map((category, index) => (
+                <Text key={index} color="#D2CFCF" fontSize="15px">
+                  {category.name}
+                </Text>
+              ))}
+            </Flex>
+            <Flex flexDirection="column" justifyContent="center" gap={4}>
+              {categories.map((category, index) => (
+                <span key={index}>{`(${category.count})`}</span>
+              ))}
+            </Flex>
+          </Flex>
         </Flex>
+        {/* Categories end */}
 
         {/* Follow Us */}
-        <Flex
-          flexDirection="column"
-          alignItems="left"
-          fontWeight="600"
-          fontSize="20px"
-        >
-          <Text>Follow Us</Text>
+        <Flex flexDirection="column">
+          <Text fontWeight="600" fontSize="20px">
+            Follow Us
+          </Text>
           <Divider
             borderColor="yellow"
             borderWidth="2px"
@@ -129,7 +138,7 @@ function Footer() {
             width="55px"
             borderRadius="2px"
           />
-          <Flex flexDirection="row" alignItems="center" mt={6}>
+          <Flex flexDirection="row" alignItems="center" mt={6} gap={2}>
             <FontAwesomeIcon
               icon={faFacebook}
               color="#0866FF"
@@ -148,16 +157,12 @@ function Footer() {
               size="2xl"
               style={{ paddingRight: "10px" }}
             />
-            <FontAwesomeIcon
-              icon={faInstagram}
-              backgroundImage="linear-gradient(to right, #F09433, #FF8E3E)"
-              size="2xl"
-            />
+            <FontAwesomeIcon icon={faInstagram} color="#DA0C81" size="2xl" />
           </Flex>
           <br />
 
           <Flex>
-            <InputGroup width="250px">
+            <InputGroup width={300}>
               <Input
                 variant="outline"
                 placeholder="Enter your email"
@@ -166,14 +171,20 @@ function Footer() {
                 height="52px"
                 border="none"
                 bgColor="black"
+                focusBorderColor="black"
               />
-              <InputRightElement mt={1} borderRadius="50%" mr={1} bgColor="#1d222b">
+              <InputRightElement
+                mt={1}
+                borderRadius="50%"
+                mr={1}
+                bgColor="#1d222b"
+              >
                 <FontAwesomeIcon icon={faRocket} size="lg" color="#e4d804" />
               </InputRightElement>
             </InputGroup>
           </Flex>
         </Flex>
-      </Box>
+      </Flex>
       <Center
         bgColor="Black"
         color="#D2CFCF"

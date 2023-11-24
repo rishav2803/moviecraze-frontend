@@ -31,7 +31,7 @@ body {
   align-items: center;
 }
 
-.btn-sign {
+.btn-border {
   border: 2px solid var(--btn-bg);
   padding: 0.8rem 2.8rem;
   border-radius: 25px;
@@ -39,7 +39,7 @@ body {
   transition: 0.3s all;
 }
 
-.btn-sign:hover {
+.btn-border:hover {
   background-color: var(--btn-bg);
   color: var(--btn-text);
   text-decoration: none;
@@ -79,5 +79,3 @@ body {
 .carousel-indicators .active {
   background-color: var(--btn-bg);
 }
-
-

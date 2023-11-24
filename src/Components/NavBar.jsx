@@ -1,5 +1,7 @@
-import { Search2Icon, ChatIcon } from "@chakra-ui/icons";
+// import { Search2Icon, ChatIcon } from "@chakra-ui/icons";
 import "../App.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faClapperboard } from "@fortawesome/free-solid-svg-icons";
 
 import {
   Box,
@@ -12,7 +14,7 @@ import {
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { themeConfig } from "../Utils/themeConfig";
 
-const Links = ["bollywood", "hollywood", "favourites", "blog", "contact"];
+const Links = ["bollywood", "hollywood", "favourites", "contact"];
 
 const NavLink = ({ children }) => {
   return (
@@ -53,7 +55,11 @@ export default function NavBar() {
             display={{ md: "none" }}
             onClick={isOpen ? onClose : onOpen}
           />
-          <HStack spacing={8} alignItems={"center"}>
+          <HStack spacing={2} alignItems={"center"}>
+            <FontAwesomeIcon
+              icon={faClapperboard}
+              style={{ color: "#e4d804", fontSize: "30px" }}
+            />
             <Box paddingRight={20} fontSize={30} fontWeight={600}>
               MovieCraze
             </Box>
@@ -75,16 +81,9 @@ export default function NavBar() {
             </HStack>
           </HStack>
           <HStack cursor={"pointer"} minW={0}>
-            <Search2Icon w={8} h={8} px={2}></Search2Icon>
-            <ChatIcon
-              w={8}
-              h={8}
-              px={2}
-              color={themeConfig.iconstextColor}
-            ></ChatIcon>
-            <Box paddingRight={6}>EN</Box>
+            {/* <Search2Icon w={8} h={8} px={2}></Search2Icon> */}
 
-            <button className="btn-sign">SIGN IN</button>
+            <button className="btn-border">SIGN IN</button>
           </HStack>
         </Flex>
 
