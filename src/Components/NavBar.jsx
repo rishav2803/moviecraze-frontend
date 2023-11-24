@@ -10,9 +10,9 @@ import {
   Stack,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
-import { themeConfig } from "../utils/themeConfig";
+import {themeConfig} from '../Utils/themesConfig';
 
-const Links = ["bollywood", "hollywood", "favourites", "blog", "contact"];
+const Links = ["bollywood", "hollywood", "favourites", "contact"];
 
 const NavLink = ({ children }) => {
   return (
@@ -76,13 +76,13 @@ export default function NavBar() {
           </HStack>
           <HStack cursor={"pointer"} minW={0}>
             <Search2Icon w={8} h={8} px={2}></Search2Icon>
-            <ChatIcon
+            {/* <ChatIcon
               w={8}
               h={8}
               px={2}
               color={themeConfig.iconstextColor}
-            ></ChatIcon>
-            <Box paddingRight={6}>EN</Box>
+            ></ChatIcon> */}
+            {/* <Box paddingRight={6}>EN</Box> */}
 
             <button className="btn-sign">SIGN IN</button>
           </HStack>

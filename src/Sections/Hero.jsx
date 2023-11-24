@@ -2,9 +2,10 @@
 // import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import Carousel from "react-bootstrap/Carousel";
-import { themeConfig } from "../utils/themeConfig";
+import {themeConfig} from "../Utils/themesConfig";
 import NavBar from "../Components/NavBar";
 import { TimeIcon, CalendarIcon } from "@chakra-ui/icons";
+import heroSectionbg from '../Assets/heroSectionbg.jpg';
 
 export default function App() {
   return (
@@ -15,7 +16,8 @@ export default function App() {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src={themeConfig.heroSectionbg}
+            src={heroSectionbg}
+
             alt="Image One"
           />
           <div className="carousel-caption">
@@ -23,8 +25,8 @@ export default function App() {
               MovieCraze
             </h3>
             <h1 className="big-font">
-              Unlimited <span className="text-yellow">Movie</span>, <br></br>
-              TVs Shows, & More.
+              Unlimited <span className="text-yellow">Movies</span>, <br></br>
+              Unlimited Entertainment
             </h1>
             <br></br>
 
@@ -69,7 +71,7 @@ export default function App() {
         <Carousel.Item className="carousel-item">
           <img
             className="d-block w-100"
-            src="https://themehut.co/wp/movflx/wp-content/uploads/2022/08/banner_bg01.jpg"
+            src={heroSectionbg}
             alt="Image Two"
           />
           <div className="carousel-caption">

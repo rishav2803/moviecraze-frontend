@@ -22,6 +22,7 @@ import {
   faLinkedin,
   faPinterest,
 } from "@fortawesome/free-brands-svg-icons";
+import footer from '../Assets/footerImage.jpg';
 
 function Footer() {
   const customFontStyle = {
@@ -40,7 +41,8 @@ function Footer() {
       <Box
         h={"80vh"}
         color="white"
-        bgImage="url('https://themehut.co/wp/movflx/wp-content/uploads/2022/08/footer_bg.jpg')"
+        // bgImage="url('https://themehut.co/wp/movflx/wp-content/uploads/2022/08/footer_bg.jpg')"
+        bgImage={footer}
         bgPosition="center"
         bgSize="cover"
         style={customFontStyle}
