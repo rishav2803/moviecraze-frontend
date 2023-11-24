@@ -13,8 +13,8 @@ import {
   Icon,
 } from "@chakra-ui/react";
 import { TimeIcon, StarIcon, ArrowRightIcon } from "@chakra-ui/icons";
-import data0 from "../Utils/bollywoodMovies.js";
-import data1 from "../Utils/hollywoodMovies.js";
+import data0 from "../utils/bollywoodMovies.js";
+import data1 from "../utils/hollywoodMovies.js";
 import bgImage2 from '../Assets/bgImage2.jpg';
 
 const CustomTabs = () => (

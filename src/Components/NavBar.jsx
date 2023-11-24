@@ -10,7 +10,7 @@ import {
   Stack,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
-import {themeConfig} from '../Utils/themesConfig';
+import {themeConfig} from '../utils/themeConfig';
 
 const Links = ["bollywood", "hollywood", "favourites", "contact"];
 

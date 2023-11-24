@@ -2,7 +2,7 @@
 // import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import Carousel from "react-bootstrap/Carousel";
-import {themeConfig} from "../Utils/themesConfig";
+import {themeConfig} from "../utils/themeConfig";
 import NavBar from "../Components/NavBar";
 import { TimeIcon, CalendarIcon } from "@chakra-ui/icons";
 import heroSectionbg from '../Assets/heroSectionbg.jpg';
