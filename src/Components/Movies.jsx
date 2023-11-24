@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import {
   Tabs,
   TabList,
@@ -11,10 +11,12 @@ import {
   Image,
   Text,
   Icon,
+  Heading,
 } from "@chakra-ui/react";
 import { TimeIcon, StarIcon, ArrowRightIcon } from "@chakra-ui/icons";
 import data0 from "../Utils/bollywoodMovies.js";
 import data1 from "../Utils/hollywoodMovies.js";
+import { themeConfig } from "../Utils/themeConfig.js";
 
 const CustomTabs = () => (
   <Tabs variant="soft-rounded" colorScheme="yellow">
@@ -41,13 +43,34 @@ const CustomTabs = () => (
 
 const MovieDetails = ({ movie }) => (
   <Box borderRadius="3px" overflow="hidden" bg="transparent">
-    <Image src={movie.cover} alt={movie.title} width="100%" height="380px" mb={2} objectFit="cover" />
+    <Box overflow="hidden">
+      <Image
+        src={movie.cover}
+        alt={movie.title}
+        width="100%"
+        height="380px"
+        mb={2}
+        objectFit="cover"
+        transition="transform 300ms ease-in-out"
+        _hover={{
+          transform: "scale(1.2)",
+          cursor: "pointer",
+        }}
+      />
+    </Box>
     <Box py={4}>
       <Flex justifyContent="space-between" alignItems="center" fontSize="sm">
-        <Text fontWeight="800" color="white">{movie.title}</Text>
+        <Text fontWeight="800" color="white">
+          {movie.title}
+        </Text>
         <Text color="#e4d804">{movie.year}</Text>
       </Flex>
-      <Flex justifyContent="space-between" alignItems="center" mt={2} fontSize="xs">
+      <Flex
+        justifyContent="space-between"
+        alignItems="center"
+        mt={2}
+        fontSize="xs"
+      >
         <Text color="#D2CFCF">
           <TimeIcon color="#e4d804" boxSize={3} mr={1} />
           {movie.runtime}
@@ -83,17 +106,31 @@ const Movies = () => {
     <Box
       h={"207vh"}
       style={customFontStyle}
-      px={12}
-      py={55}
+      px={3}
+      py={50}
       bgImage="url('https://themehut.co/wp/movflx/wp-content/uploads/2022/08/tr_movies_bg.jpg')"
       bgPosition="center"
-      bgSize="cover"
-      backgroundSize="150%"
+      height={"100%"}
+      width={"100%"}
     >
       <Flex alignItems="center">
-        <Box p="4" color="white" fontSize="30px" fontWeight="800">
-          Bollywood Movies
-        </Box>
+        {/* <Box p="4" color="white" fontSize="30px" fontWeight="800">
+          Bollywood
+        </Box> */}
+
+        <Flex p={4} flexDirection={"column"} justifyContent={"flex-start"}>
+          <Heading
+            size={"xs"}
+            color={themeConfig.iconstextColor}
+            letterSpacing={2}
+          >
+            UPCOMING MOVIES
+          </Heading>
+
+          <Heading color={"#fff"} fontWeight={700}>
+            Bollywood
+          </Heading>
+        </Flex>
         <Spacer />
         <Box p="4">
           <CustomTabs />
@@ -103,19 +140,20 @@ const Movies = () => {
 
       {/* Move ArrowRightIcon below the last Bollywood movie */}
       <Flex justifyContent="flex-end" mt={4}>
-        <Icon as={ArrowRightIcon} boxSize={6} color="yellow" mt={4} mr={6}/>
+        <Icon as={ArrowRightIcon} boxSize={6} color="yellow" mt={4} mr={6} />
       </Flex>
 
-      <Flex alignItems="center">
-        <Box p="4" color="white" fontSize="30px" fontWeight="800" mt="12">
-          Hollywood Movies
-        </Box>
+      <Flex p={4} flexDirection={"column"} justifyContent={"flex-start"}>
+        <Heading color={"#fff"} fontWeight={700}>
+          Hollywood
+        </Heading>
       </Flex>
+
       <MovieGrid movies={hollywoodMovies} />
 
       {/* Move ArrowRightIcon below the last Hollywood movie */}
       <Flex justifyContent="flex-end">
-        <Icon as={ArrowRightIcon} boxSize={6} color="yellow" mt={4} mr={6}/>
+        <Icon as={ArrowRightIcon} boxSize={6} color="yellow" mt={4} mr={6} />
       </Flex>
     </Box>
   );

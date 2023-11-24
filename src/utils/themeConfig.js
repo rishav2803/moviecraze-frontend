@@ -11,6 +11,7 @@ export const themeConfig = {
   iconstextColor: "#e4d804",
   bgColor: "#262626",
   buttonbgColor: "#363636",
+  smallTextColor: "#bcbcbc",
   moviePagebg:
     "https://themehut.co/wp/movflx/wp-content/themes/movflx/assets/img/bg/movie_details_bg.jpg",
 };
