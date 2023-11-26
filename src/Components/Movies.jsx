@@ -16,7 +16,8 @@ import {
 import { TimeIcon, StarIcon, ArrowRightIcon } from "@chakra-ui/icons";
 import data0 from "../Utils/bollywoodMovies.js";
 import data1 from "../Utils/hollywoodMovies.js";
-import { themeConfig } from "../Utils/themeConfig.js";
+import { themeConfig } from "../utils/themeConfig.js";
+import bgImage2 from "../Assets/bgImage2.jpg";
 
 const CustomTabs = () => (
   <Tabs variant="soft-rounded" colorScheme="yellow">
@@ -108,7 +109,7 @@ const Movies = () => {
       style={customFontStyle}
       px={3}
       py={50}
-      bgImage="url('https://themehut.co/wp/movflx/wp-content/uploads/2022/08/tr_movies_bg.jpg')"
+      bgImage={bgImage2}
       bgPosition="center"
       height={"100%"}
       width={"100%"}

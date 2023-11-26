@@ -1,9 +1,10 @@
 import { Box, Flex, Image, Text, Divider, Center } from "@chakra-ui/react";
 import NavBar from "../Components/NavBar";
-import { themeConfig } from "../Utils/themeConfig";
+import { themeConfig } from "../utils/themeConfig";
 import MovieDetail from "../Sections/MovieDetail";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import MovieBg from "../Assets/movie_background.jpg";
 
 function Show() {
   const customFontStyle = {
@@ -14,6 +15,7 @@ function Show() {
     <Box
       color="white"
       bgImage="radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%)"
+      // bg={`url(${MovieBg}) center / cover`}
       fontStyle={customFontStyle}
     >
       <NavBar />

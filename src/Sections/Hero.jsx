@@ -1,10 +1,11 @@
 // import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import Carousel from "react-bootstrap/Carousel";
-import { themeConfig } from "../Utils/themeConfig";
+import { themeConfig } from "../utils/themeConfig";
 import NavBar from "../Components/NavBar";
 import { Box, Image } from "@chakra-ui/react";
 import MovieDetail from "./MovieDetail";
+import heroSectionbg from '../Assets/heroSectionbg.jpg';
 
 export default function App() {
   return (
@@ -15,7 +16,8 @@ export default function App() {
         <Carousel.Item>
           <Image
             // className="d-block w-100"
-            src={themeConfig.heroSectionbg}
+            // src={themeConfig.heroSectionbg}
+            src={heroSectionbg}
             alt="Image One"
             objectFit="cover"
           />
@@ -24,8 +26,8 @@ export default function App() {
               MovieCraze
             </h3>
             <h1 className="big-font">
-              Unlimited <span className="text-yellow">Movie</span>, <br></br>
-              TVs Shows, & More.
+              Unlimited <span className="text-yellow">Movies</span>, <br></br>
+              Unlimited Entertainment
             </h1>
             <br></br>
             <MovieDetail year={2022} duration={120} />
@@ -34,7 +36,7 @@ export default function App() {
         <Carousel.Item className="carousel-item">
           <img
             className="d-block w-100"
-            src="https://themehut.co/wp/movflx/wp-content/uploads/2022/08/banner_bg01.jpg"
+            src={heroSectionbg}
             alt="Image Two"
           />
           <div className="carousel-caption">
@@ -42,8 +44,8 @@ export default function App() {
               MovieCraze
             </h3>
             <h1 className="big-font">
-              Unlimited <span className="text-yellow">Movie</span>, <br></br>
-              TVs Shows, & More.
+              Unlimited <span className="text-yellow">Movies</span>, <br></br>
+              Unlimited Entertainment
             </h1>
 
             <br></br>
