@@ -48,7 +48,7 @@ function MovieDetails({ movie, type = "" }) {
 
         <Card
           style={{
-            height: "34rem",
+            height: "30rem",
             width: "14rem",
             color: "#fff",
             overflow: "hidden",

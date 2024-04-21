@@ -14,7 +14,7 @@ import { themeConfig } from "../Utils/themeConfig";
 import MovieDetail from "../Sections/MovieDetail";
 import { useNavigate, useParams } from "react-router-dom";
 import { AddIcon } from "@chakra-ui/icons";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   getMovieById,
@@ -28,9 +28,11 @@ import Loading from "../Components/Loading";
 import { selectUser } from "../Redux/usersSlice";
 import { displayToast } from "../Redux/toastSlice";
 import ReviewDetails from "../Components/ReviewDetails";
-import { getReviews } from "../Redux/reviewSlice";
+import { getReviews, selectReviews } from "../Redux/reviewSlice";
 import Footer from "../Sections/Footer";
 import RecommendedMovies from "./RecommendedMovies";
+import ReviewSummary from "../Components/ReviewSummary";
+import {Container} from "react-bootstrap";
 
 function Show() {
   const customFontStyle = {
@@ -39,17 +41,55 @@ function Show() {
   const { movie_id } = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [aggregatedData,setAggregatedData]=useState({});
 
   const movie = useSelector(selectMovie);
   const loading = useSelector(selectLoading);
   const user = useSelector(selectUser);
   const recomMovies=useSelector(selectRecommendedMovies);
+  const reviews = useSelector(selectReviews);
+
   console.log(recomMovies,"H");
 
   useEffect(() => {
     dispatch(getMovieById(movie_id));
     dispatch(getReviews(movie_id));
   }, [dispatch, movie_id]);
+
+  function calcPerc(count,review_count){
+    if (count!==0 && review_count!==0) {
+      return ((count/review_count)*100).toFixed(2);
+    }
+    return 0;
+  }
+  
+  useEffect(()=>{
+    if (reviews) {
+      let filteredReviews = reviews.filter(review => review.movie_id === movie_id);
+
+      let positiveCount = filteredReviews.reduce((count, review) => {
+        return count + (review.sentiment.toLowerCase() === "positive" || review.sentiment.toLowerCase()==="neutral" ? 1 : 0);
+      }, 0);
+
+      let negativeCount = filteredReviews.reduce((count, review) => {
+        return count + (review.sentiment.toLowerCase() === "negative" ? 1 : 0);
+      }, 0);
+
+      let averageScore = filteredReviews.reduce((sum, review) => {
+        return sum + review.avg_score;
+      }, 0) / filteredReviews.length;
+
+      const data={
+        _id: movie_id,
+        average_score: averageScore,
+        positive_percentage: calcPerc(positiveCount, reviews.length),
+        negative_percentage: calcPerc(negativeCount, reviews.length),
+      };
+
+      setAggregatedData(data);
+    }
+  },[reviews,dispatch])
+
 
   useEffect(()=>{
     if (movie) {
@@ -158,6 +198,8 @@ function Show() {
         </Flex>
       )}
 
+
+      <ReviewSummary data={aggregatedData}/>
 
       {recomMovies && (
         <RecommendedMovies

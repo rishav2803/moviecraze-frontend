@@ -78,6 +78,8 @@ export const register = (userData, cb) => async (dispatch) => {
     if (response.status === 201 && data.user_id !== "") {
       if (cb) cb();
       dispatch(displayToast("Registered User"));
+    } else {
+      dispatch(displayToast("Failed To Register!!"));
     }
   } catch (err) {
     console.error(err);

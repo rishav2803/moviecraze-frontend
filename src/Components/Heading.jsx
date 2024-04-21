@@ -6,21 +6,23 @@ import CustomTabs from "./CustomTabs";
 
 function Heading({ heading, pb, customTabs = false,onFilter,filter}) {
   return (
-    <Flex
-      borderBottom={`2px solid ${themeConfig.iconstextColor}`}
-      pb={pb}
-      alignItems="center"
-      justifyContent="space-between"
-    >
-      <Box>
-        <Text fontSize="2xl" fontWeight="bold" as="span">
-          {heading}
-        </Text>
-        <ArrowRightIcon mb={1} mx={4} color={themeConfig.iconstextColor} />
-      </Box>
+    <Box px={8} >
+      <Flex
+        borderBottom={`2px solid ${themeConfig.iconstextColor}`}
+        pb={pb}
+        alignItems="center"
+        justifyContent="space-between"
+      >
+        <Box>
+          <Text fontSize="2xl" color={"white"} fontWeight="bold" as="span">
+            {heading}
+          </Text>
+          <ArrowRightIcon mb={1} mx={4} color={themeConfig.iconstextColor} />
+        </Box>
 
-      {customTabs && <CustomTabs onFilter={onFilter} filter={filter}/>}
-    </Flex>
+        {customTabs && <CustomTabs onFilter={onFilter} filter={filter}/>}
+      </Flex>
+    </Box>
   );
 }
 

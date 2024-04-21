@@ -7,7 +7,7 @@ export default function MovieDetail({ movieType, year, duration }) {
   return (
     <Flex
       className="carousel-desc"
-      style={{ display: "flex", gap: "1.6rem", alignItems: "center" }}
+      style={{ display: "flex", gap: "1rem", alignItems: "center" }}
     >
       <p
         style={{
@@ -18,7 +18,7 @@ export default function MovieDetail({ movieType, year, duration }) {
           fontWeight: "700",
         }}
       >
-        PG 18
+        UA
       </p>
       <p
         style={{
@@ -40,7 +40,7 @@ export default function MovieDetail({ movieType, year, duration }) {
       <p>
         <TimeIcon color={themeConfig.iconstextColor}></TimeIcon>
         <span style={{ marginLeft: "10px" }}></span>
-        {duration}
+        {duration} mins
       </p>
     </Flex>
   );

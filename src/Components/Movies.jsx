@@ -1,10 +1,8 @@
 /* eslint-disable react/prop-types */
 // import React from "react";
-import { Box, Flex, Spacer, Icon, Heading } from "@chakra-ui/react";
+import { Box, Flex, Spacer, Icon } from "@chakra-ui/react";
 import { ArrowRightIcon } from "@chakra-ui/icons";
-// import data0 from "../Utils/bollywoodMovies.js";
-// import data1 from "../Utils/hollywoodMovies.js";
-// import { themeConfig } from "../Utils/themeConfig.js";
+import Heading from "../Components/Heading";
 
 import MovieGrid from "./MovieGrid.jsx";
 import { useEffect } from "react";
@@ -45,16 +43,7 @@ function Movies() {
     >
       <Box>
         <Flex p={4} flexDirection={"column"} justifyContent={"flex-start"}>
-          <Heading
-            ml="5rem"
-            py="1rem"
-            borderBottom="4px"
-            borderBottomColor={"#e4d804"}
-            color={"#fff"}
-            fontWeight={700}
-          >
-            Bollywood
-          </Heading>
+          <Heading pb={4} heading={"Latest Bollywood Release"}/>
         </Flex>
         <Spacer />
         {/* <Box p="4"> */}
@@ -70,16 +59,7 @@ function Movies() {
       </Flex>
 
       <Flex p={4} flexDirection={"column"} justifyContent={"flex-start"}>
-        <Heading
-          ml="5rem"
-          py="1rem"
-          borderBottom="4px"
-          borderBottomColor={"#e4d804"}
-          color={"#fff"}
-          fontWeight={700}
-        >
-          Hollywood
-        </Heading>
+          <Heading pb={4} heading={"Latest Hollywood Release"}/>
       </Flex>
 
       <MovieGrid movies={hollywoodMovies} />
